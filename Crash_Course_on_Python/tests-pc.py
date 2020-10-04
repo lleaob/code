@@ -296,3 +296,66 @@ print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c',
 print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
 print(skip_elements([])) # Should be []
 '''
+#Let's use tuples to store information about a file: its name, its type and its size in bytes. Fill in the gaps in this code to return the size in kilobytes (a kilobyte is 1024 bytes) up to 2 decimal places.
+'''
+def file_size(file_info):
+	name, type, size = file_info
+	return("{:.2f}".format(size / 1024))
+
+print(file_size(('Class Assignment', 'docx', 17875))) # Should print 17.46
+print(file_size(('Notes', 'txt', 496))) # Should print 0.48
+print(file_size(('Program', 'py', 1239))) # Should print 1.21
+'''
+
+#Try out the enumerate function for yourself in this quick exercise. Complete the skip_elements function to return every other element from the list, this time using the enumerate function to check if an element is on an even position or an odd position.
+'''
+def skip_elements(elements):
+	# code goes here
+	new_list = []
+	for index, element in enumerate(elements):
+		if index % 2 == 0:
+			new_list.append(element)
+	return new_list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+'''
+'''
+#return "name <email>" from a tuple
+def full_email(people):
+	result = []
+	for email, name in people:
+		result.append("{} <{}>".format(name, email))
+	return result
+
+print(full_email([("lleaob@gmail.com","Leonardo Braga")]))
+'''
+'''
+def odd_numbers(n):
+	return [x for x in range(1, n+1, 2)]
+
+print(odd_numbers(5))  # Should print [1, 3, 5]
+print(odd_numbers(10)) # Should print [1, 3, 5, 7, 9]
+print(odd_numbers(11)) # Should print [1, 3, 5, 7, 9, 11]
+print(odd_numbers(1))  # Should print [1]
+print(odd_numbers(-1)) # Should print []
+'''
+'''
+def mdc(a, b):
+	list_a = [a]
+	list_b = [b]
+	list_primes = []
+	dc = 1
+	for n in range(2,max(a,b)):
+		while a%n == 0 and b%n == 0:
+			list_a.append(a/n)
+			list_b.append(b/n)
+			list_primes.append(n)
+			a = a/n
+			b = b/n
+			dc = dc * n
+	#for i in n: i = i*n
+	return list_primes , dc
+
+print(mdc(2000,200))
+'''
