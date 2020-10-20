@@ -266,10 +266,36 @@ couch.material = "leather"
 couch.color = "red"
 
 def describe_furniture(piece):
-	return ("This piece of furniture is made of {} {}".format(piece.color, piece.material))
+	return ("This piece of f#urniture is made of {} {}".format(piece.color, piece.material))
 
 print(describe_furniture(table)) 
 # Should be "This piece of furniture is made of brown wood"
 print(describe_furniture(couch)) 
 # Should be "This piece of furniture is made of red leather"
 '''
+#OK, now it’s your turn! Have a go at writing methods for a class. Create a Dog class with dog_years based on the Piglet class shown before (one human year is about 7 dog years).
+'''
+class Dog:
+  years = 0
+  def dog_years(self):
+	  return self.years*7
+    
+fido=Dog()
+fido.years=3
+print(fido.dog_years())
+'''
+#Want to see this in action? In this code, there's a Person class that has an attribute name, which gets set when constructing the object. Fill in the blanks so that 1) when an instance of the class is created, the attribute gets set correctly, and 2) when the greeting() method is called, the greeting states the assigned name.
+'''
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def greeting(self):
+        # Should return "hi, my name is " followed by the name of the Person.
+        return 'hi, my name is {}'.format(self.name) 
+
+# Create a new instance with a name of your choice
+some_person = Person('leo')
+# Call the greeting method
+print(some_person.greeting())
+'''
+
